@@ -1,2 +1,2 @@
-# AdivinheOnumero-Android
-Pequeno projeto para estudos no Android Studio.
+## AdivinheOnumero-Android
+Primeiro pequeno projeto para estudos no Android Studio.
