@@ -23,10 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10pt"
-        android:background="#9F5BFF"
         android:gravity="center"
         android:text="O número está entre:"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="15pt" />
 
     <LinearLayout
