@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private TextView aviso;
+    private TextView tvIntervalo;
     private TextView numeroMinimo;
     private TextView numeroMaximo;
     private EditText entradaUsuario;
@@ -22,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         aviso = findViewById(R.id.tvAviso);
+        tvIntervalo = findViewById(R.id.tvIntervalo);
         numeroMinimo = findViewById(R.id.tvNum1);
         numeroMaximo = findViewById(R.id.tvNum2);
         entradaUsuario = findViewById(R.id.etNumber);
         btnJogar = findViewById(R.id.btnJogar);
 
-        int numeroCorreto = 30;
+        Random gerador = new Random();
+
+        int numeroCorreto = gerador.nextInt(26);
 
         btnJogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 aviso.setVisibility(View.VISIBLE);
                                 aviso.setText("PARABÉNS! VOCÊ ACERTOU O NÚMERO!");
+                                btnJogar.setEnabled(false);
+                                tvIntervalo.setText(null);
                                 entradaUsuario.setText(null);
                             }
                         }
