@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                                 numeroMaximo.setText(String.valueOf(intEntradaUsuario));
                                 entradaUsuario.setText(null);
                             }
+                        } else if (intEntradaUsuario == 0 ) {
+                            aviso.setVisibility(View.VISIBLE);
+                            aviso.setText("Digite um número maior que 0!");
+                            entradaUsuario.setText("");
                         } else if (intEntradaUsuario == numeroCorreto) {
 
                             if (intEntradaUsuario < 0 || intEntradaUsuario > 100) {
