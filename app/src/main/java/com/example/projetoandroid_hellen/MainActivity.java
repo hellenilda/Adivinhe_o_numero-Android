@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         Random gerador = new Random();
 
-        int numeroCorreto = gerador.nextInt(26);
+        int numeroCorreto = gerador.nextInt((100-1)+1)+1;
+        Log.i("MEUAPP", "Número: "+numeroCorreto);
 
         btnJogar.setOnClickListener(new View.OnClickListener() {
             @Override
