@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">ProjetoAndroid-Hellen</string>
     <string name="erroformato" />O valor informado não é um número
+    <string name="tituloAcertou" />Parabéns!
+    <string name="mensagemAcertou">Parabéns, você acertou o número\"</string>
+    <string name="tituloVazio">Aviso!</string>
+    <string name="mensagemVazio">Insira um número (válido) abaixo!</string>
+    <string name="tituloIntervalo">Aviso</string>
+    <string name="mensagemIntervalo">Insira um número de 0 à 100!</string>
+    <string name="tituloMaiorQzero">Aviso</string>
+    <string name="mensagemMaiorQzero">Digite um número maior que 0!</string>
 </resources>
