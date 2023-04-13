@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,20 +35,16 @@ public class MainActivity extends AppCompatActivity {
         Random gerador = new Random();
 
         int numeroCorreto = gerador.nextInt((100-1)+1)+1;
-        Log.i("MEUAPP", "Número: "+numeroCorreto);
 
         btnJogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-//                    String strNum1 = numeroMinimo.getText().toString();
-//                    int intNum1 = Integer.parseInt(strNum1);
-//
-//                    String strNum2 = numeroMaximo.getText().toString();
-//                    int intNum2 = Integer.parseInt(strNum2);
-
                     String strEntradaUsuario = entradaUsuario.getText().toString();
                     int intEntradaUsuario = Integer.parseInt(strEntradaUsuario);
+
+                    Log.i("MEUAPP", "Número correto: "+numeroCorreto);
+                    Log.i("MEUAPP", "Número que foi digitado: "+intEntradaUsuario);
 
                     aviso.setVisibility(View.INVISIBLE);
 
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         aviso.setText("Insira um valor válido abaixo!");
                     } else {
                         if (intEntradaUsuario < numeroCorreto) {
-                            if (intEntradaUsuario < 0 || intEntradaUsuario > 100) {
+                            if (intEntradaUsuario < 0 | intEntradaUsuario > 100) {
                                 aviso.setVisibility(View.VISIBLE);
                                 aviso.setText("Insira um número de 0 a 100!");
                                 entradaUsuario.setText(null);
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                                 entradaUsuario.setText(null);
                             }
                         } else if (intEntradaUsuario > numeroCorreto) {
-                            if (intEntradaUsuario < 0 || intEntradaUsuario > 100) {
+                            if (intEntradaUsuario < 0 | intEntradaUsuario > 100) {
                                 aviso.setVisibility(View.VISIBLE);
                                 aviso.setText("Insira um número de 0 a 100!");
                                 entradaUsuario.setText(null);
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                             entradaUsuario.setText("");
                         } else if (intEntradaUsuario == numeroCorreto) {
 
-                            if (intEntradaUsuario < 0 || intEntradaUsuario > 100) {
+                            if (intEntradaUsuario < 0 | intEntradaUsuario > 100) {
                                 aviso.setVisibility(View.VISIBLE);
                                 aviso.setText("Insira um número de 0 a 100!");
                                 entradaUsuario.setText("");
@@ -92,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 } catch (NumberFormatException exception) {
+                    Toast.makeText(MainActivity.this, R.string.erroformato, Toast.LENGTH_SHORT).show();
                     aviso.setVisibility(View.VISIBLE);
                     aviso.setText("Insira um valor válido abaixo!");
                 }
